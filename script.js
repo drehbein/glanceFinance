@@ -1,21 +1,21 @@
 document.addEventListener('DOMContentLoaded', function () {
 
   //populates date field based on current time
-  date = new Date();
-  month = date.toLocaleDateString('en-US', {month: 'long'});
-  year = date.getFullYear();
+  let date = new Date();
+  let month = date.toLocaleDateString('en-US', {month: 'long'});
+  let year = date.getFullYear();
   document.getElementById('date').textContent = month + " " + year;
 });
 
 // On navigation, switches between pages
 
 function display (contentId, buttonID) {
-  graph = document.getElementById("graph");
-  breakdown = document.getElementById("breakdown");
-  options = document.getElementById("options");
-  graphButton = document.getElementById("graphButton");
-  breakdownButton = document.getElementById("breakdownButton");
-  optionsButton = document.getElementById("optionsButton");
+  let graph = document.getElementById("graph");
+  let breakdown = document.getElementById("breakdown");
+  let options = document.getElementById("options");
+  let graphButton = document.getElementById("graphButton");
+  let breakdownButton = document.getElementById("breakdownButton");
+  let optionsButton = document.getElementById("optionsButton");
 
   graph.style.display = "none";
   breakdown.style.display = "none";
@@ -24,8 +24,8 @@ function display (contentId, buttonID) {
   breakdownButton.style.backgroundColor = "#702632"
   optionsButton.style.backgroundColor = "#702632"
 
-  content = document.getElementById(contentId);
-  button = document.getElementById(buttonID);
+  let content = document.getElementById(contentId);
+  let button = document.getElementById(buttonID);
 
   content.style.display = "block";
   button.style.backgroundColor = "#912F40";
