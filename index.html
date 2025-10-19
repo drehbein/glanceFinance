@@ -5,20 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Glance Finance</title>
   <link rel="stylesheet" href="stylesheet.css">
-  <link rel="icon" type="image/svg" href="images/logo.svg">
+  <link rel="icon" type="image/svg" href="images/graphIcon.svg">
   <script src="script.js"></script>
 </head>
 <body>
-  <!-- web layout: date, settings, br, graph, breakdown (options makes new overlay menu) -->
   <div id="wrapper">
-    <header>
-      <h1 id="date">[date]</h1>
-    </header>
-    <nav>
-      <button id="graphButton" onclick="display('graph', 'graphButton')">Graph</button>
-      <button id="breakdownButton" onclick="display('breakdown', 'breakdownButton')">Breakdown</button>
-      <button id="optionsButton" onclick="display('options', 'optionsButton')">Options</button>
-    </nav>
+    <h1 id="date"></h1>
+    <button id="optionsButton" onclick="displayOptions()">
+      <img id="optionsIcon" src="images/optionsIcon.svg" alt="Navigation icon to options">
+    </button>
     <div id="graph">
       <p>[Graph Placeholder]</p>
         <!--
@@ -26,18 +21,8 @@
           Build graph day-by-day
         -->
     </div>
-    <menu id="options">
-      <li>[Color sceme dropdown]</li>
-      <li>[Editor button]</li>
-      <li>[Initial capital text input] | [Initial date calendar selector]</li>
-      <li>[Time range slider]</li>
-      <li>[Time increments slider]</li>
-      <li>[Origin toggle]</li> <!-- Toggle origin being zero or relative minimum -->
-      <li>[Categories toggle]</li> <!--Toggle line graph to bar graph, color coded by category -->
-      <li>[Sort by dropdown for breakdown]</li>
-    </menu>
     <div id="breakdown">
-      <table id="expenses">
+      <table>
         <thead>
           <tr>
             <th>Name</th>
@@ -66,7 +51,24 @@
             <td>Job</td>
           </tr>
         </tbody>
-     </table>
+      </table>
+    </div>
+    <div id="optionsWrapper" class="isHidden">
+      <div id="optionsField">
+        <h1>Options</h1>
+        <button id="optionsExit" onclick="hideOptions()">
+          <img src="images/closeIcon.svg" alt="Exit options menu button">
+        </button>
+        <menu>
+          <li>[Color sceme dropdown]</li>
+          <li>[Initial capital text input] | [Initial date calendar selector]</li>
+          <li>[Time range slider]</li>
+          <li>[Time increments slider]</li>
+          <li>[Origin toggle]</li> <!-- Toggle origin being zero or relative minimum -->
+          <li>[Sort by dropdown for breakdown]</li>
+          <li>[login/account stuff]</li> <!-- Maybe the options icon should just be the avatar icon? -->
+        </menu>
+      </div>
     </div>
   </div>
 </body>

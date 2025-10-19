@@ -14,86 +14,82 @@
 }
 
 #wrapper {
+  width: 100%;
+  background-color: #FFFFFA;
+  color: #080705;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 64px 48px 1fr;
-  gap: 15px;
-  border: 15px solid #080705;
-  height: 100vh;
-  background-color: #080705;
+  grid-template-columns: 2fr 1fr;
+  grid-template-areas:
+    'date optionsButton'
+    'graph graph'
+    'breakdown breakdown';
 }
 
-header {
-  grid-column: 1 / 5;
-  grid-row: 1;
-  display: flex;
-}
-
-header > * {
-  margin: auto 20px;
-  flex-grow: 1;
+#date {
+  grid-area: date;
   text-align: center;
 }
 
-header img {
-  width: 64px;
-  height: 64px; 
-  background-color: #FFFFFA;
-}
-
-header h1 {
-  background-color: #080705;
-  color: #FFFFFA;
-  flex-grow: 1;
-}
-
-nav {
-  grid-column: 1 / 5;
-  grid-row: 2;
-  display: flex;
-}
-
-nav > button {
-  width: 50%;
+button {
   border: none;
-  background-color: #702632;
-  color: #FFFFFA;
-  font-size: 2.5rem;
-  letter-spacing: 4px;
-  font-weight: 500;
-  transition: background-color 500ms linear;
-  margin: 0 15px;
+  background: none;
 }
 
-nav > *:first-child {
-  background-color: #912F40;
-  margin-left: 0;
+#optionsButton {
+  grid-area: optionsButton;
 }
 
-nav > *:last-child {
-  margin-right: 0;
+#optionsIcon {
+  width: 60px;
 }
 
 #graph {
-  grid-column: 1 / 5;
-  grid-row: 3;
-  background-color: #FFFFFA;
-}
-
-#options {
-  grid-column: 1 / 5;
-  grid-row: 3;
-  display: none;
-  background-color: #FFFFFA;
+  grid-area: graph;
 }
 
 #breakdown {
-  grid-column: 1 / 5;
-  grid-row: 3;
-  display: none;
-  background-color: #FFFFFA;
+  grid-area: breakdown;
 }
 
-#breakdown > * {
+#optionsWrapper {
+  position: absolute;
   width: 100%;
+  background-color: rgba(255, 255, 250, 0.8); /* Opaque version of #FFFFFA */
+}
+
+.isHidden {
+  display: none;
+}
+
+#optionsField {
+  position: relative;
+  width: min(80%, 40rem);
+  margin: 3rem auto 0;
+  padding: 1rem 2rem 2rem;
+  background-color: #FFFFFA;
+  border: 2px solid #080705;
+  border-radius: 4px;
+}
+
+#optionsExit {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+#optionsExit img {
+  width: 2rem;
+}
+
+#optionsField h1 {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+@media screen and (min-width: 64rem) {
+  #wrapper {
+    grid-template-areas:
+      'date optionsButton'
+      'graph breakdown';
+  }
 }
