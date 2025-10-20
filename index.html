@@ -10,8 +10,8 @@
 </head>
 <body>
   <div id="wrapper">
-    <h1 id="date"></h1>
-    <button id="optionsButton" onclick="displayOptions()">
+    <h1 id="date">[date]</h1>
+    <button id="optionsButton" onclick="showElements(['optionsWrapper'])">
       <img id="optionsIcon" src="images/optionsIcon.svg" alt="Navigation icon to options">
     </button>
     <div id="graph">
@@ -28,35 +28,37 @@
             <th>Name</th>
             <th>Frequency</th>
             <th>Amount</th>
-            <th>Category</th>
           </tr>
         </thead>
-        <tbody>
-          <tr>
-            <td>Rent</td>
-            <td>Monthly on 1st</td>
-            <td>- $1200</td>
-            <td>Bills</td>
-          </tr>
-          <tr>
-            <td>Crunchyroll</td>
-            <td>Monthly on 23rd</td>
-            <td>- $8</td>
-            <td>Entertainment</td>
-          </tr>
-          <tr>
-            <td>Menards</td>
-            <td>Weekly on Friday</td>
-            <td>+ $850</td>
-            <td>Job</td>
-          </tr>
-        </tbody>
+        <tbody></tbody>
       </table>
+      <form id="form">
+        <label for="name">Name</label>
+        <input id="name" type="text" placeholder="income/expense" required>
+        <fieldset>
+          <legend>Every</legend>
+          <label for="frequency">Frequency</label>
+          <input id="frequency" type="number" placeholder="2" required>
+          <label for="units">Units</label>
+          <select id="units">
+            <option value="1">Days</option>
+            <option value="2" selected>Weeks</option>
+            <option value="3">Months</option>
+            <option value="4">Years</option>
+          </select>
+        </fieldset>
+        <label for="amount">Amount</label>
+        <span>$</span>
+        <input type="number" id="amount" placeholder="855.16" required>
+        <button id="addItem" type="submit">
+          <img src="images/addIcon.svg" alt="Add button">
+        </button>
+      </form>
     </div>
     <div id="optionsWrapper" class="isHidden">
       <div id="optionsField">
         <h1>Options</h1>
-        <button id="optionsExit" onclick="hideOptions()">
+        <button id="optionsExit" onclick="hideElements(['optionsWrapper'])">
           <img src="images/closeIcon.svg" alt="Exit options menu button">
         </button>
         <menu>
@@ -65,7 +67,6 @@
           <li>[Time range slider]</li>
           <li>[Time increments slider]</li>
           <li>[Origin toggle]</li> <!-- Toggle origin being zero or relative minimum -->
-          <li>[Sort by dropdown for breakdown]</li>
           <li>[login/account stuff]</li> <!-- Maybe the options icon should just be the avatar icon? -->
         </menu>
       </div>
