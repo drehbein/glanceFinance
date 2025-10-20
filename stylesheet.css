@@ -51,9 +51,10 @@ button {
   grid-area: breakdown;
 }
 
-form label {
-  visibility: hidden;
-  position: absolute;
+#breakdown table,
+#breakdown th,
+#breakdown td {
+  border: 1px solid #40434E;
 }
 
 #optionsWrapper {
