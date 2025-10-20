@@ -43,7 +43,7 @@ button {
   width: 60px;
 }
 
-#graph {
+#graphWrapper {
   grid-area: graph;
 }
 
